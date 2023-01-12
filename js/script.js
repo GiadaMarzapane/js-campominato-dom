@@ -21,7 +21,13 @@ const myRandomNumbers = [];
 let index = 1;
 
 while (index <= 16) {
-    myRandomNumbers.push(randomNumbers());
+
+    let random = randomNumbers();
+    myRandomNumbers.push(random);
+
+    while (myRandomNumbers.includes(random)) {
+        random = randomNumbers();
+    }
     console.log(myRandomNumbers);
     index++
 }
