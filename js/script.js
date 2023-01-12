@@ -5,6 +5,8 @@ const myScore = document.querySelector('#punteggio > h3');
 const myBombs = arrayBomb();
 console.log(myBombs);
 
+let i = 0;
+
 for (let index = 1; index <= 100; index++) {
     let element = index;
 
@@ -21,15 +23,17 @@ for (let index = 1; index <= 100; index++) {
         }
     )
 
+    
     myCell.addEventListener('click',
-        function(){
-
-            if ((myBombs.includes(element)) == false){
-                console.log('Cella cliccata fiore');
-            }
-            else{
-                console.log('Cella cliccata bomba');        
-            }
+        function(){                
+                if ((myBombs.includes(element)) == false){
+                    console.log('Cella cliccata fiore');
+                    i++;
+                    myScore.innerHTML = i;
+                }
+                else{
+                    console.log('Cella cliccata bomba');        
+                }
         }
     )
 }
