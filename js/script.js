@@ -1,5 +1,6 @@
 const play = document.getElementById('play');
-const container = document.querySelector('.container');    
+const container = document.querySelector('.container');
+const myBombs = arrayBomb();
 
 for (let index = 1; index <= 100; index++) {
     const element = index;
@@ -16,20 +17,23 @@ for (let index = 1; index <= 100; index++) {
     )
 }
 
-const myRandomNumbers = [];
+function arrayBomb() {
+    const myRandomNumbers = [];
 
-let index = 1;
-
-while (index <= 16) {
-
+    let index = 1;
     let random = randomNumbers();
-    myRandomNumbers.push(random);
 
-    while (myRandomNumbers.includes(random)) {
-        random = randomNumbers();
+    while (index <= 16) {
+
+
+        while (myRandomNumbers.includes(random)) {
+            random = randomNumbers();
+        }
+        myRandomNumbers.push(random);
+        
+        index++
     }
-    console.log(myRandomNumbers);
-    index++
+    return myRandomNumbers;
 }
 
 /* -----------------FUNCTIONS--------------------------*/
