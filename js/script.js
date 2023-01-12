@@ -1,11 +1,17 @@
+/* -------------------COSTANTI------------------------------------- */
 const play = document.getElementById('play');
 const container = document.querySelector('.container');
 const scoreDiv = document.querySelector('#punteggio');
+const punteggio = document.querySelector('#punteggio > h2')
 const myScore = document.querySelector('#punteggio > h3');
 const myBombs = arrayBomb();
 console.log(myBombs);
 
+/* -------------------SVOLGIMENTO------------------------------------- */
+
 let i = 0;
+
+let gameOver = false;
 
 for (let index = 1; index <= 100; index++) {
     let element = index;
@@ -26,14 +32,20 @@ for (let index = 1; index <= 100; index++) {
     
     myCell.addEventListener('click',
         function(){                
-                if ((myBombs.includes(element)) == false){
-                    console.log('Cella cliccata fiore');
-                    i++;
+            if (gameOver == false && (myBombs.includes(element)) == false){
+                console.log('Cella cliccata fiore');
+                i++;
+                if (i == 84){
+                    punteggio.innerHTML = 'HAI VINTO!!!';
                     myScore.innerHTML = i;
                 }
-                else{
-                    console.log('Cella cliccata bomba');        
-                }
+            }
+            
+            else{
+                punteggio.innerHTML = 'Hai perso... Il tuo punteggio è: ';
+                myScore.innerHTML = i;
+                gameOver = true;
+            }
         }
     )
 }
@@ -66,15 +78,16 @@ function createMyCell (element){
 
     cell.addEventListener('click',
         function () {
+            if (gameOver == false){
+                cell.classList.add('flower');
+            }
             
-            cell.classList.add('flower');
-
-            if (myBombs.includes(element)) {
+            if ((gameOver== false) && (myBombs.includes(element))){
                 cell.classList.add('bomb');
                 cell.classList.remove('flower');
-            }
-
-
+                gameOver = true;                
+            }    
+                        
             console.log('Numero cliccato', cell.innerHTML);
         }
     )
