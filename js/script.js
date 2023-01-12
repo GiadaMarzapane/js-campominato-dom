@@ -6,11 +6,7 @@ console.log(myBombs);
 for (let index = 1; index <= 100; index++) {
     let element = index;
 
-    let myCell = createMyCell(element);
-
-    if (myBombs.includes(element)){
-        myCell.classList.add('bomb');
-    }
+    let myCell = createMyCell(element);    
 
     container.append(myCell);
     
@@ -51,7 +47,14 @@ function createMyCell (element){
 
     cell.addEventListener('click',
         function () {
-            cell.classList.add('blu');
+            
+            cell.classList.add('flower');
+
+            if (myBombs.includes(element)) {
+                cell.classList.add('bomb');
+                cell.classList.remove('flower');
+            }
+
 
             console.log('Numero cliccato', cell.innerHTML);
         }
