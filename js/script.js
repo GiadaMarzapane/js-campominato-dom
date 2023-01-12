@@ -16,6 +16,16 @@ for (let index = 1; index <= 100; index++) {
     )
 }
 
+const myRandomNumbers = [];
+
+let index = 1;
+
+while (index <= 16) {
+    myRandomNumbers.push(randomNumbers());
+    console.log(myRandomNumbers);
+    index++
+}
+
 /* -----------------FUNCTIONS--------------------------*/
 
 function createMyCell (element){
@@ -34,7 +44,7 @@ function createMyCell (element){
     return cell;
 }
 
-function randomNumbers (min, max) {
-    return Math.ceil(Math.random() * (max - min) + min);
+function randomNumbers () {
+    return Math.ceil(Math.random() * 100);
 }
         
