@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body > *{
+    font-family: 'Dosis', sans-serif;
+}
+
+header{
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+}
+
+main{
+    height: calc(100vh - 60px);
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.flex{
+    display: flex;
+        flex-wrap: wrap;
+}
+
+div.container{
+    height: 80vh;
+    width: 80vh;
+    border: 2px solid violet;
+}
+
+.my-cell{    
+    border: 2px solid violet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.easy{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.medium{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.hard {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+
+.blu{
+    background-color: blueviolet;
+}
+
+header div{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+}
+
+header div select{
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    line-height: 1rem;
+    border: 2px solid violet;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+button{    
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 2px 8px;
+    background-color: rgba(177, 177, 177, 0.5);
+    border: 2px solid violet;
+    border-radius: 10px;
+    cursor: pointer;
+}

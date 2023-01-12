@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body > *{
+    font-family: 'Dosis', sans-serif;
+}
+
+header{
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+main{
+    height: calc(100vh - 60px);
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.flex{
+    display: flex;
+        flex-wrap: wrap;
+}
+
+div.container{
+    height: 80vh;
+    width: 80vh;
+    border: 2px solid violet;
+}
+
+.my-cell{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 2px solid violet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.blu{
+    background-color: blueviolet;
+}
+
+button{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 5px 10px;
+    background-color: rgba(177, 177, 177, 0.5);
+    border: 2px solid violet;
+    border-radius: 10px;
+    cursor: pointer;
+}
