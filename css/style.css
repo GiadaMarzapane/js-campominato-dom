@@ -8,6 +8,10 @@ body > *{
     font-family: 'Dosis', sans-serif;
 }
 
+.text-center{
+    text-align: center;
+}
+
 header{
     text-align: center;
     height: 60px;
@@ -22,13 +26,29 @@ main{
     justify-content: space-around;
 }
 
+button {
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 5px 10px;
+    background-color: rgba(177, 177, 177, 0.5);
+    border: 2px solid violet;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .hidden{
     display: none;
 }
 
 .flex{
     display: flex;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+main div.text-center{
+    width: calc(100vw / 4);
 }
 
 div.container{
@@ -53,16 +73,4 @@ div.container{
 
 .flower{
     background-color: blueviolet;
-}
-
-button{    
-    font-family: 'Dosis', sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.25rem;
-    padding: 5px 10px;
-    background-color: rgba(177, 177, 177, 0.5);
-    border: 2px solid violet;
-    border-radius: 10px;
-    cursor: pointer;
 }

@@ -1,5 +1,6 @@
 const play = document.getElementById('play');
 const container = document.querySelector('.container');
+const score = document.querySelector('#punteggio');
 const myBombs = arrayBomb();
 console.log(myBombs);
 
@@ -15,6 +16,7 @@ for (let index = 1; index <= 100; index++) {
     
             container.classList.remove('hidden');
             container.classList.add('flex');
+            score.classList.remove('hidden');
         }
     )
 }
