@@ -1,6 +1,7 @@
 const play = document.getElementById('play');
 const container = document.querySelector('.container');
-const score = document.querySelector('#punteggio');
+const scoreDiv = document.querySelector('#punteggio');
+const myScore = document.querySelector('#punteggio > h3');
 const myBombs = arrayBomb();
 console.log(myBombs);
 
@@ -16,10 +17,24 @@ for (let index = 1; index <= 100; index++) {
     
             container.classList.remove('hidden');
             container.classList.add('flex');
-            score.classList.remove('hidden');
+            scoreDiv.classList.remove('hidden');
+        }
+    )
+
+    myCell.addEventListener('click',
+        function(){
+
+            if ((myBombs.includes(element)) == false){
+                console.log('Cella cliccata fiore');
+            }
+            else{
+                console.log('Cella cliccata bomba');        
+            }
         }
     )
 }
+
+/* -----------------FUNCTIONS--------------------------*/
 
 function arrayBomb() {
     const myRandomNumbers = [];
@@ -39,8 +54,6 @@ function arrayBomb() {
     }
     return myRandomNumbers;
 }
-
-/* -----------------FUNCTIONS--------------------------*/
 
 function createMyCell (element){
     const cell = document.createElement('div');
