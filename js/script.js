@@ -9,6 +9,15 @@ console.log(myBombs);
 
 /* -------------------SVOLGIMENTO------------------------------------- */
 
+play.addEventListener('click',
+    function () {
+
+        container.classList.remove('hidden');
+        container.classList.add('flex');
+        scoreDiv.classList.remove('hidden');
+    }
+)
+
 let i = 0;
 
 let gameOver = false;
@@ -18,27 +27,18 @@ for (let index = 1; index <= 100; index++) {
 
     let myCell = createMyCell(element);    
 
-    container.append(myCell);
-    
-    play.addEventListener('click',
-        function(){
-    
-            container.classList.remove('hidden');
-            container.classList.add('flex');
-            scoreDiv.classList.remove('hidden');
-        }
-    )
-
+    container.append(myCell);    
     
     myCell.addEventListener('click',
         function(){                
             if (gameOver == false && (myBombs.includes(element)) == false){
-                console.log('Cella cliccata fiore');
+                // console.log('Cella cliccata fiore');
                 i++;
-                if (i == 84){
-                    punteggio.innerHTML = 'HAI VINTO!!!';
-                    myScore.innerHTML = i;
-                }
+                myScore.innerHTML = i;                
+            }
+            else if (i >= 84) {
+                punteggio.innerHTML = 'HAI VINTO!!!';
+                gameOver = true;
             }
             
             else{
@@ -82,13 +82,13 @@ function createMyCell (element){
                 cell.classList.add('flower');
             }
             
-            if ((gameOver== false) && (myBombs.includes(element))){
+            if ((gameOver== false) || (myBombs.includes(element))){
                 cell.classList.add('bomb');
                 cell.classList.remove('flower');
                 gameOver = true;                
             }    
                         
-            console.log('Numero cliccato', cell.innerHTML);
+            // console.log('Numero cliccato', cell.innerHTML);
         }
     )
 
