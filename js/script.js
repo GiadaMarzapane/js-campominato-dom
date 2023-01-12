@@ -34,13 +34,12 @@ for (let index = 1; index <= 100; index++) {
             if (gameOver == false && (myBombs.includes(element)) == false){
                 // console.log('Cella cliccata fiore');
                 i++;
-                myScore.innerHTML = i;                
-            }
-            else if (i >= 84) {
-                punteggio.innerHTML = 'HAI VINTO!!!';
-                gameOver = true;
-            }
-            
+                myScore.innerHTML = i;
+                if (i > 84){
+                    punteggio.innerHTML = 'HAI VINTO!!!';
+                    gameOver = true;
+                }
+            }            
             else{
                 punteggio.innerHTML = 'Hai perso... Il tuo punteggio è: ';
                 myScore.innerHTML = i;
@@ -82,7 +81,7 @@ function createMyCell (element){
                 cell.classList.add('flower');
             }
             
-            if ((gameOver== false) || (myBombs.includes(element))){
+            if ((gameOver== false) && (myBombs.includes(element))){
                 cell.classList.add('bomb');
                 cell.classList.remove('flower');
                 gameOver = true;                
