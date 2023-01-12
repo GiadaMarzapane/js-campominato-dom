@@ -47,6 +47,10 @@ div.container{
     font-weight: 600;
 }
 
+.bomb{
+    background-color: red;
+}
+
 .blu{
     background-color: blueviolet;
 }

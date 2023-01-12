@@ -1,11 +1,17 @@
 const play = document.getElementById('play');
 const container = document.querySelector('.container');
 const myBombs = arrayBomb();
+console.log(myBombs);
 
 for (let index = 1; index <= 100; index++) {
-    const element = index;
+    let element = index;
 
-    const myCell = createMyCell(element);
+    let myCell = createMyCell(element);
+
+    if (myBombs.includes(element)){
+        myCell.classList.add('bomb');
+    }
+
     container.append(myCell);
     
     play.addEventListener('click',
@@ -30,7 +36,7 @@ function arrayBomb() {
             random = randomNumbers();
         }
         myRandomNumbers.push(random);
-        
+
         index++
     }
     return myRandomNumbers;
