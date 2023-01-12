@@ -4,9 +4,7 @@ const container = document.querySelector('.container');
 for (let index = 1; index <= 100; index++) {
     const element = index;
 
-    const myCell = document.createElement('div');
-    myCell.innerHTML += element;
-    myCell.classList.add('my-cell');
+    const myCell = createMyCell(element);
     container.append(myCell);
     
     play.addEventListener('click',
@@ -16,12 +14,27 @@ for (let index = 1; index <= 100; index++) {
             container.classList.add('flex');
         }
     )
-    myCell.addEventListener('click',
-    function(){
-        myCell.classList.add('blu');
-        
-        console.log('Numero cliccato', myCell.innerHTML);
-    }
+}
+
+/* -----------------FUNCTIONS--------------------------*/
+
+function createMyCell (element){
+    const cell = document.createElement('div');
+    cell.classList.add('my-cell');
+    cell.innerHTML += element;
+
+    cell.addEventListener('click',
+        function () {
+            cell.classList.add('blu');
+
+            console.log('Numero cliccato', cell.innerHTML);
+        }
     )
+
+    return cell;
+}
+
+function randomNumbers (min, max) {
+    return Math.ceil(Math.random() * (max - min) + min);
 }
         
